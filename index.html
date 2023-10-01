@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Préstamos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculadora de Préstamos</h1>
+    
+    <label for="monto">Monto del préstamo:</label>
+    <input type="number" id="monto" placeholder="Ingrese el monto del préstamo"><br>
+
+    <label for="plazo">Plazo en meses:</label>
+    <input type="number" id="plazo" placeholder="Ingrese el plazo en meses"><br>
+
+    <button onclick="calcularCuotas()">Calcular</button><br>
+
+    <h2>Resultado:</h2>
+    <p>Cuota mensual con intereses: <span id="resultado"></span></p>
+
+    <script>
+        function calcularCuotas() {
+            const monto = parseFloat(document.getElementById('monto').value);
+            const plazo = parseInt(document.getElementById('plazo').value);
+            const tasaInteresAnual = 0.8; // 80% de interés anual
+
+            // Fórmula para calcular la cuota mensual con interés compuesto
+            const tasaInteresMensual = tasaInteresAnual / 12;
+            const cuotaMensual = (monto * tasaInteresMensual) / (1 - Math.pow(1 + tasaInteresMensual, -plazo));
+            
+            document.getElementById('resultado').textContent = cuotaMensual.toFixed(2);
+        }
+    </script>
+</body>
+</html>
