@@ -1,14 +1,4 @@
-[
-    {
-        "nombre": "Juan",
-        "edad": 30
-    },
-    {
-        "nombre": "María",
-        "edad": 25
-    },
-    {
-        "nombre": "Carlos",
-        "edad": 35
-    }
-]
+{
+    "prestamos": []
+  }
+  
