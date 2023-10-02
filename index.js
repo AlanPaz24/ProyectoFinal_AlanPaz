@@ -4,7 +4,7 @@ $(document).ready(function () {
     const cuotaElement = $("#cuota");
     const paisSelect = $("#pais");
 
-    // Cargar datos de países desde el archivo JSON
+    
     $.getJSON("paises.json", function (data) {
         $.each(data, function (key, pais) {
             paisSelect.append($("<option>", {
